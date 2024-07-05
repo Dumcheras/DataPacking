@@ -51,3 +51,14 @@ class CountryState:
         del self.country_dict[country_name]
         country_capital = input('Введите название новой столицы ')
         self.country_dict[country_name] = country_capital
+
+    @staticmethod
+    def pickle_to_file(pickled_dict, file_name):
+        with open(file_name, 'wb') as file:
+            pickle.dump(pickled_dict, file, protocol=4)
+        return "Файл упакован"
+    @staticmethod
+    def unpickled_file(pickled_file_name):
+        with open(pickled_file_name, 'rb') as file:
+            unpickle_data = pickle.load(file)
+        return unpickle_data
