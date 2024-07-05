@@ -37,3 +37,11 @@ class CountryState:
                 return country_to_search
         except KeyError:
             print('Такой страны нет в списке целей\n')
+
+    def get_for_capital(self, country_capital):
+        self.country_capital = country_capital
+        capital_of_country = [key for key, value in self.country_dict.items() if value == self.country_capital]
+        str_capital = ', '.join(capital_of_country)
+        print(f'Это столица страны {str_capital}')
+        return capital_of_country
+
