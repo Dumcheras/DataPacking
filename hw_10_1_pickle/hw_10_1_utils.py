@@ -45,3 +45,9 @@ class CountryState:
         print(f'Это столица страны {str_capital}')
         return capital_of_country
 
+    def replace_capital(self, country_name):
+        self.country_name = country_name
+        country_name = input("В какой стране меняем столицу? ")
+        del self.country_dict[country_name]
+        country_capital = input('Введите название новой столицы ')
+        self.country_dict[country_name] = country_capital
