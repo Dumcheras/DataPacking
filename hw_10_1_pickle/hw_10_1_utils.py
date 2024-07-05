@@ -27,3 +27,13 @@ class CountryState:
             str_country = ', '.join(country_to_del)
             print(f'Такой страны нет. Есть вот такие: {str_country}')
             return self.country_dict
+
+    def get_for_name(self, country_name):
+        self.country_name = country_name
+        try:
+            country_to_search = country_dict[input("Столицу какой страны вы ищете? ")]
+            if country_to_search in country_dict.values():
+                print(f"Столица {country_to_search}\n")
+                return country_to_search
+        except KeyError:
+            print('Такой страны нет в списке целей\n')
